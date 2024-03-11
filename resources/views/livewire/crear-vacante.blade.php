@@ -14,9 +14,10 @@
         name="salario"
         class="rounded-md shadow-som"
     >   
-        <option value="">-- Selecciona un rol --</option>
-        <option value="1">Developer - Obtener Empleo</option>
-        <option value="2">Recruiter - Publicar Empleos</option>
+        <option value="">-- Seleccione --</option>
+        @foreach ($salarios as $salario )
+            <option value="{{$salario->id}}">{{$salario->salario}}</option>
+        @endforeach
     </select>
         
     </div>
@@ -29,9 +30,9 @@
         name="categoria"
         class="rounded-md shadow-som"
     >   
-        <option value="">-- Selecciona un rol --</option>
-        <option value="1">Developer - Obtener Empleo</option>
-        <option value="2">Recruiter - Publicar Empleos</option>
+    @foreach ($categorias as $categoria) )
+    <option value="{{$categoria->id}}">{{$categoria->categoria}}</option>
+@endforeach
     </select>
         
     </div>
