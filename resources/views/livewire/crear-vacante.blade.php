@@ -59,7 +59,7 @@
     <div>
         <x-input-label for='ultimo_dia' :value='__("Último día para postularse")'/>
 
-        <x-text-input id="ultimo_dia" class="block mt-1 w-full" type='text' wire:model="ultimo_dia"  placeholder="Ultimo dia"/>
+        <x-text-input id="ultimo_dia" class="block mt-1 w-full" type='date' wire:model="ultimo_dia"  placeholder="Ultimo dia"/>
         @error('ultimo_dia')
         <livewire:mostrar-alerta :message="$message"/>
          @enderror
@@ -68,7 +68,7 @@
     <div>
         <x-input-label for='descripcion' :value='__("Descripcion del puesto")'/>
 
-        <textarea id="descripcion" class="block mt-1 w-full" type='text' wire:model="descripcion"  :value="old('descripcion')" placeholder="Descripcion"></textarea>
+        <textarea id="descripcion" class="block mt-1 w-full text-slate-700" type='text' wire:model="descripcion"  placeholder="Descripcion"></textarea>
 
             @error('descripcion')
             <livewire:mostrar-alerta :message="$message"/>
