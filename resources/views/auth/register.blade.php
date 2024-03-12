@@ -21,7 +21,7 @@
             <select
                 id="rol"
                 name="rol"
-                class="rounded-md shadow-som"
+                class="rounded-md shadow-sm"
             >   
                 <option value="">-- Selecciona un rol --</option>
                 <option value="1">Developer - Obtener Empleo</option>
