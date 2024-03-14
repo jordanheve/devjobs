@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Vacante extends Model
 {
     use HasFactory;
+    protected $casts = [ 'ultimo_dia'=>'date'];
 
     protected $fillable = [
         'titulo',
