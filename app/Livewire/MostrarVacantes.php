@@ -7,6 +7,15 @@ use Livewire\Component;
 
 class MostrarVacantes extends Component
 {
+    
+    protected $listener = [
+        'deleteVacante'
+    ];
+
+    public function deleteVacante(Vacante $vacante){
+        $vacante->delete();
+    }
+
     public function render()
     {
         $vacantes = Vacante::where('user_id', auth()->user()->id)->paginate(10);

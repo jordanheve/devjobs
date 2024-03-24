@@ -16,9 +16,9 @@
                 <a href="{{route('vacantes.edit', $vacante->id)}}"
                 class="bg-teal-600 p-1 text-white font-bold rounded uppercase text-xs"
                 >Editar</a>
-                <a href=""
-                class="bg-red-800 text-white font-bold rounded p-1 uppercase text-xs"
-                >Eliminar</a>
+                <button
+                class="bg-red-800 text-white font-bold rounded p-1 uppercase text-xs" wire:click="dispatch('delete', { vacanteId: {{ $vacante->id }}})"
+                >Eliminar</button>
             </div>
         </div>
         
@@ -30,4 +30,33 @@
     <div class=" mt-10">
         {{$vacantes->links()}}
     </div>
+    @push('scripts')
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){
+                
+                @this.on('delete', vacanteId => {
+                    Swal.fire({
+                        title: "¿Deseas Eliminar está vacante?",
+                        text: "Una vez eliminada no podras recuperarla!",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#3085d6",
+                        cancelButtonColor: "#d33",
+                        confirmButtonText: "Si, Eliminar!",
+                        cancelButtonText: "Cancelar"
+                    }).then((result) => {
+                        if(result.isConfirmed){
+                            @this.call('deleteVacante', vacanteId);
+                            Swal.fire({
+                                title: 'Se eliminó la Vacante',
+                                text: 'Eliminado correctamente',
+                                icon: 'success'
+                            });
+                            }
+                        })
+                    })
+                });
+        </script>
+     @endpush
 </div>
