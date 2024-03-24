@@ -13,6 +13,7 @@ class MostrarVacantes extends Component
     ];
 
     public function deleteVacante(Vacante $vacante){
+        $this->authorize('delete', $vacante);
         $vacante->delete();
     }
 
