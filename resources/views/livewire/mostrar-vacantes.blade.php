@@ -13,7 +13,7 @@
                 <a href=""
                 class="bg-slate-800 dark:bg-slate-100 dark:text-slate-800 p-1 font-bold rounded uppercase text-xs"
                 >Candidatos</a>
-                <a href=""
+                <a href="{{route('vacantes.edit', $vacante->id)}}"
                 class="bg-teal-600 p-1 text-white font-bold rounded uppercase text-xs"
                 >Editar</a>
                 <a href=""
