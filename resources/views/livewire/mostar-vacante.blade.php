@@ -32,4 +32,12 @@
         </div>
    </div>
 
+   @guest
+       <div class="mt-5 bg-slate-600 border border-dashed border-slate-700 p-4 text-center rounded-md">
+            <p class="text-slate-300">
+                ¿Deseas aplicar a esta vacante? <a class="text-teal-400" href="{{route('register')}}">Registrate para aplicar a esta y más vacantes</a>
+            </p>
+       </div>
+   @endguest
+
 </div>
