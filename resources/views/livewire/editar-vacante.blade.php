@@ -95,7 +95,7 @@
     </div>     
     
     <x-primary-button>
-        Crear vacante
+        Guardar Vacante
     </x-primary-button>
 
 </form>
