@@ -13,6 +13,7 @@
                 <!-- Navigation Links -->
                 @auth
                     
+                @if (auth()->user()->rol == 2)
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('vacantes.index')" :active="request()->routeIs('vacantes.index')">
                         {{ __('Mis vacantes') }}
@@ -21,6 +22,7 @@
                         {{ __('Crear vacante') }}
                     </x-nav-link>
                 </div>
+                @endif
                 @endauth
 
 
@@ -109,12 +111,14 @@
       
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
+            @if (auth()->user()->rol == 2)
             <x-responsive-nav-link :href="route('vacantes.index')" :active="request()->routeIs('vacantes.index')">
                 {{ __('Mis vacantes') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('vacantes.create')" :active="request()->routeIs('vacantes.create')">
                 {{ __('Crear vacante') }}
             </x-responsive-nav-link>
+            @endif
         </div>
         
         <!-- Responsive Settings Options -->
