@@ -10,9 +10,16 @@
             </div>
             
             <div class="flex max-md:flex-col gap-3 mt-2 items-stretch max-md:w-full text-center">
-                <a href=""
-                class="bg-slate-800 dark:bg-slate-100 dark:text-slate-800 p-1 font-bold rounded uppercase text-xs"
-                >Candidatos</a>
+                <a href="{{route('candidatos.index', $vacante->id)}}"
+                class="bg-slate-800 dark:bg-slate-100 flex dark:text-slate-800 p-1 font-bold rounded uppercase text-xs"
+                >
+                @if($vacante->candidatos->count() > 0)
+                <span class="text-white bg-red-500 rounded-full px-2 flex items-center justify-center mr-1  ">
+                {{$vacante->candidatos->count()}}
+                </span>
+                @endif
+                Candidatos
+                </a>
                 <a href="{{route('vacantes.edit', $vacante->id)}}"
                 class="bg-teal-600 p-1 text-white font-bold rounded uppercase text-xs"
                 >Editar</a>

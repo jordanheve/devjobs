@@ -21,7 +21,7 @@
                                     </p>
                                 </div>
                                 <div>
-                                    <a href="https://www.google.com" target="_blank" class="font-bold text-indigo-600 text-sm uppercase">
+                                    <a href="{{route('candidatos.index', $notification->data['id_vacante'])}}" target="_blank" class="font-bold text-indigo-600 text-sm uppercase">
                                         Ver Candidatos
                                     </a>
                                 </div>
