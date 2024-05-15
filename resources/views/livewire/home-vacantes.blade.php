@@ -11,6 +11,8 @@
                                 {{$vacante->titulo}}
                             </a>
                             <p class="dark:text-zinc-300">{{$vacante->empresa}}</p>
+                            <p class="dark:text-zinc-300">{{$vacante->categoria->categoria}}</p>
+                            <p class="dark:text-zinc-300">{{$vacante->salario->salario}}</p>
                             <p class="dark:text-zinc-300 font-semibold text-xs">
                                 Ultimo dia para postularse: 
                                 <span class="font-normal">
