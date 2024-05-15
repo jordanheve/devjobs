@@ -17,7 +17,6 @@ class HomeVacantes extends Component
         $this->termino = $termino;
         $this->categoria = $categoria;
         $this->salario = $salario;
-        dd('desde el buscador');
     }
 
     public function render()
